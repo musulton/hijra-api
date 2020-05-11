@@ -5,4 +5,3 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/065510340fa819bb84d3/maintainability)](https://codeclimate.com/github/musulton/hijra-api/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/065510340fa819bb84d3/test_coverage)](https://codeclimate.com/github/musulton/hijra-api/test_coverage)
 [![Build status](https://ci.appveyor.com/api/projects/status/es2nn45bwphvpv2t?svg=true)](https://ci.appveyor.com/project/musulton/hijra-api)
-[![Build status](https://ci.appveyor.com/api/projects/status/es2nn45bwphvpv2t/branch/master?svg=true)](https://ci.appveyor.com/project/musulton/hijra-api/branch/master)
