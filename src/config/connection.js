@@ -3,7 +3,8 @@ import { connectionString } from './settings';
 
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true
 });
 
 export default mongoose;

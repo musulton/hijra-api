@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 const BookSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    unique: true,
-    required: true
-  },
+  // id: {
+  //   type: String,
+  //   unique: true,
+  //   required: true
+  // },
   title: {
     type: String,
     required: true

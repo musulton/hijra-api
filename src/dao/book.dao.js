@@ -30,7 +30,16 @@ const findAll = async (_, callback) => {
 
 const findOneById = async (id, callback) => {
   try {
-    const result = await Book.find({ id });
+    const result = await Book.findOne({ _id: id });
+    callback(null, result);
+  } catch (error) {
+    callback(error);
+  }
+};
+
+const findAllByProp = async (prop, value, callback) => {
+  try {
+    const result = await Book.find({ [prop]: value });
     callback(null, result);
   } catch (error) {
     callback(error);
@@ -61,6 +70,7 @@ export default {
   insertMany,
   findAll,
   findOneById,
+  findAllByProp,
   deleteOneById,
   updateOneById
 };
