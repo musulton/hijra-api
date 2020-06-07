@@ -22,7 +22,7 @@ const insertOne = (req, res) => {
    * @returns {Object} amount of data added
    */
 const insertMany = (req, res) => {
-  bookDao.insertMany(datas, (error, data) => {
+  bookDao.insertMany(req.body.data, (error, data) => {
     if (error) response.error(error, res);
     response.success(`As much data entered ${data.length} item`, res);
   });
