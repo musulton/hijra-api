@@ -1,5 +1,9 @@
 import bookController from '../controller/book.controller';
 
+/**
+   * Use the controller to access route books
+   * @param  {any} app to install route express
+   */
 const bookRoutes = (app) => {
   app.route('/book/insertOne').post(bookController.insertOne);
   app.route('/book/insertMany').post(bookController.insertMany);

@@ -1,3 +1,9 @@
+/**
+   * Response was successful
+   * @param  {Object} values to be value returned
+   * @param  {any} res to be response
+   * @returns {Object} data object
+   */
 const success = (values, res) => {
   const data = {
     status: 0,
@@ -9,6 +15,12 @@ const success = (values, res) => {
   res.end();
 };
 
+/**
+   * Response was error
+   * @param  {Object} values to be value returned
+   * @param  {any} res to be response
+   * @returns {Object} data object
+   */
 const error = (values, res) => {
   const data = {
     status: 1,
@@ -20,6 +32,12 @@ const error = (values, res) => {
   res.end();
 };
 
+/**
+   * Response was failed
+   * @param  {Object} values to be value returned
+   * @param  {any} res to be response
+   * @returns {Object} data object
+   */
 const failed = (values, res) => {
   const data = {
     status: 2,

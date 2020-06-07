@@ -2,6 +2,12 @@ import { isEmptyArray } from '../utils/conditional';
 import bookDao from '../dao/book.dao';
 import response from '../response/res';
 
+/**
+   * Insert one data
+   * @param  {any} req to be request
+   * @param  {any} res to be response
+   * @returns {Object} id new data added
+   */
 const insertOne = (req, res) => {
   bookDao.insertOne(req.body, (error, data) => {
     if (error) response.error(error, res);
@@ -9,6 +15,12 @@ const insertOne = (req, res) => {
   });
 };
 
+/**
+   * Insert multiple data
+   * @param  {any} req to be request
+   * @param  {any} res to be response
+   * @returns {Object} amount of data added
+   */
 const insertMany = (req, res) => {
   bookDao.insertMany(datas, (error, data) => {
     if (error) response.error(error, res);
@@ -16,6 +28,12 @@ const insertMany = (req, res) => {
   });
 };
 
+/**
+   * Get all data
+   * @param  {any} req to be request
+   * @param  {any} res to be response
+   * @returns {Object} all data
+   */
 const getAll = (req, res) => {
   bookDao.findAll(req.body, (error, data) => {
     if (error) response.error(error, res);
@@ -23,6 +41,12 @@ const getAll = (req, res) => {
   });
 };
 
+/**
+   * Get one data by id
+   * @param  {any} req to be request
+   * @param  {any} res to be response
+   * @returns {Object} one data
+   */
 const getOneById = (req, res) => {
   bookDao.findOneById(req.params.id, (error, data) => {
     if (error) response.error(error, res);
@@ -30,6 +54,12 @@ const getOneById = (req, res) => {
   });
 };
 
+/**
+   * Get multiple data by prop
+   * @param  {any} req to be request
+   * @param  {any} res to be response
+   * @returns {Object} one or multiple data
+   */
 const filterByProp = (req, res) => {
   const params = req.params.filter;
   const propIndex = params.indexOf('=');
@@ -42,6 +72,12 @@ const filterByProp = (req, res) => {
   });
 };
 
+/**
+   * Delete one by id
+   * @param  {any} req to be request
+   * @param  {any} res to be response
+   * @returns {Object} deleted data id
+   */
 const deleteOneById = (req, res) => {
   bookDao.deleteOneById(req.params.id, (error, data) => {
     if (error) response.error(error, res);
@@ -51,6 +87,12 @@ const deleteOneById = (req, res) => {
   });
 };
 
+/**
+   * Update or insert new data
+   * @param  {any} req to be request
+   * @param  {any} res to be response
+   * @returns {Object} id data that is updated or recently added
+   */
 const updateOneById = (req, res) => {
   bookDao.updateOneById(req.params.id, req.body, (error, data) => {
     if (error) response.error(error, res);
