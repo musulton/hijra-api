@@ -1,15 +1,19 @@
-import logger from 'morgan';
 import express from 'express';
-import cookieParser from 'cookie-parser';
-import indexRouter from './routes/index';
+import bodyParser from 'body-parser';
+import logger from 'morgan';
+
+// Routes
+import bookRoutes from './routes/book.routes';
+
+// Connection
+import './config/connection';
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 
-app.use('/', indexRouter);
+bookRoutes(app);
 
 export default app;
