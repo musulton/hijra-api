@@ -59,7 +59,7 @@ const findOneById = async (id, callback) => {
 
 /**
    * Find all by prop
-   * @param  {String} prop to be property selector
+   * @param  {String} prop to be property selector/filter
    * @param  {String} value to be value selector
    * @param  {Function} callback to be callback after finishing collection method execution
    */
@@ -88,15 +88,14 @@ const deleteOneById = async (id, callback) => {
 
 /**
    * Find all by prop
-   * @param  {String} id to be id selector
+   * @param  {String} id to be id selector/filter
    * @param  {Object} data to be new data
    * @param  {Function} callback to be callback after finishing collection method execution
    */
 const updateOneById = async (id, data, callback) => {
   try {
-    await Book.findByIdAndUpdate(id, data);
-    await Book.save();
-    callback(null, data);
+    const result = await Book.findByIdAndUpdate(id, data);
+    callback(null, result);
   } catch (error) {
     callback(error, null);
   }

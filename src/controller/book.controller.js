@@ -22,7 +22,7 @@ const insertOne = (req, res) => {
    * @returns {Object} amount of data added
    */
 const insertMany = (req, res) => {
-  bookDao.insertMany(req.body.data, (error, data) => {
+  bookDao.insertMany(req.body, (error, data) => {
     if (error) response.error(error, res);
     response.success(`As much data entered ${data.length} item`, res);
   });
@@ -96,7 +96,8 @@ const deleteOneById = (req, res) => {
 const updateOneById = (req, res) => {
   bookDao.updateOneById(req.params.id, req.body, (error, data) => {
     if (error) response.error(error, res);
-    if (!response) response.failed(null, res);
+    console.log('dataa', data)
+    if (!data) response.failed(null, res);
     // eslint-disable-next-line no-underscore-dangle
     response.success(`Data with id ${data._id} has been updated`, res);
   });

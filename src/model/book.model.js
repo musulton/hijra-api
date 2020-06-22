@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
 
+/**
+   * Schema Book
+   * for reading/prayer value data
+   */
 const BookSchema = new mongoose.Schema({
-  // id: {
-  //   type: String,
-  //   unique: true,
-  //   required: true
-  // },
   title: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   type: {
     type: String,
