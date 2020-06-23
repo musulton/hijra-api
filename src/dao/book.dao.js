@@ -1,10 +1,10 @@
 import Book from '../model/book.model';
 
 /**
-   * Insert one
-   * @param  {Object} data to be one data book added
-   * @param  {Function} callback to be callback after finishing collection method execution
-   */
+ * Insert one
+ * @param  {Object} data to be one data book added
+ * @param  {Function} callback to be callback after finishing collection method execution
+ */
 const insertOne = async (data, callback) => {
   try {
     const book = new Book(data);
@@ -16,10 +16,10 @@ const insertOne = async (data, callback) => {
 };
 
 /**
-   * Insert many
-   * @param  {Array} data to be multiple data book added
-   * @param  {Function} callback to be callback after finishing collection method execution
-   */
+ * Insert many
+ * @param  {Array} data to be multiple data book added
+ * @param  {Function} callback to be callback after finishing collection method execution
+ */
 const insertMany = async (data, callback) => {
   try {
     const result = await Book.insertMany(data);
@@ -30,13 +30,13 @@ const insertMany = async (data, callback) => {
 };
 
 /**
-   * Find all
-   * @param  {any} _ to be anonimous function
-   * @param  {Function} callback to be callback after finishing collection method execution
-   */
+ * Find all
+ * @param  {any} _ to be anonimous function
+ * @param  {Function} callback to be callback after finishing collection method execution
+ */
 const findAll = async (_, callback) => {
   try {
-    const result = await Book.find({ });
+    const result = await Book.find({});
     callback(null, result);
   } catch (error) {
     callback(error);
@@ -44,10 +44,10 @@ const findAll = async (_, callback) => {
 };
 
 /**
-   * Find one by id
-   * @param  {String} _ to be selector
-   * @param  {Function} callback to be callback after finishing collection method execution
-   */
+ * Find one by id
+ * @param  {String} _ to be selector
+ * @param  {Function} callback to be callback after finishing collection method execution
+ */
 const findOneById = async (id, callback) => {
   try {
     const result = await Book.findOne({ _id: id });
@@ -58,11 +58,11 @@ const findOneById = async (id, callback) => {
 };
 
 /**
-   * Find all by prop
-   * @param  {String} prop to be property selector/filter
-   * @param  {String} value to be value selector
-   * @param  {Function} callback to be callback after finishing collection method execution
-   */
+ * Find all by prop
+ * @param  {String} prop to be property selector/filter
+ * @param  {String} value to be value selector
+ * @param  {Function} callback to be callback after finishing collection method execution
+ */
 const findAllByProp = async (prop, value, callback) => {
   try {
     const result = await Book.find({ [prop]: value });
@@ -73,10 +73,10 @@ const findAllByProp = async (prop, value, callback) => {
 };
 
 /**
-   * Delete one by id
-   * @param  {String} id to be selector
-   * @param  {Function} callback to be callback after finishing collection method execution
-   */
+ * Delete one by id
+ * @param  {String} id to be selector
+ * @param  {Function} callback to be callback after finishing collection method execution
+ */
 const deleteOneById = async (id, callback) => {
   try {
     const result = await Book.findByIdAndDelete(id);
@@ -87,11 +87,11 @@ const deleteOneById = async (id, callback) => {
 };
 
 /**
-   * Find all by prop
-   * @param  {String} id to be id selector/filter
-   * @param  {Object} data to be new data
-   * @param  {Function} callback to be callback after finishing collection method execution
-   */
+ * Find all by prop
+ * @param  {String} id to be id selector/filter
+ * @param  {Object} data to be new data
+ * @param  {Function} callback to be callback after finishing collection method execution
+ */
 const updateOneById = async (id, data, callback) => {
   try {
     const result = await Book.findByIdAndUpdate(id, data);
@@ -108,5 +108,5 @@ export default {
   findOneById,
   findAllByProp,
   deleteOneById,
-  updateOneById
+  updateOneById,
 };
