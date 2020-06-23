@@ -1,8 +1,7 @@
 {
   "name": "hijra-api",
   "version": "1.0.0",
-  "description": "reading api to guide your worship",
-  "main": "app.js",
+  "description": "a reading api to guide your worship",
   "private": true,
   "scripts": {
     "prestart": "babel ./src --out-dir build",
